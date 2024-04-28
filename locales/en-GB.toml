@@ -1,0 +1,15 @@
+[generic]
+error = "Oops!"
+error-description = """
+An error occurred. Please try again later.
+If the issue persists, please report this to a staff member.
+"""
+
+[ticket]
+creation-title = "Ticket creation"
+channel-created = "Please follow the steps in {{.channel}} to continue."
+product-select = "Please select the product you wish to receive support for."
+creation-welcome = """
+Thank you for creating a ticket. A support team member will be available to assist you shortly. \
+While you wait, please provide as much information as possible.\
+"""

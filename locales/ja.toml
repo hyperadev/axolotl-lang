@@ -1,0 +1,22 @@
+#
+# This file was translated by someone who knows very basic Japanese, with the
+# help of a dictionary (jisho.org), a translation service and a lot of research.
+#
+# This will almost definately contain mistakes, please fix any mistakes you find!
+#
+
+[generic]
+error = "おっと"
+error-description = """
+エラーが発生しました。後でもう一度お試しください。
+問題が解決しない場合は、スタッフまでお知らせください。
+"""
+
+[ticket]
+creation-title = "チケット作成"
+channel-created = "{{.channel}}の手順でお進みください。"
+product-select = "サポートを受けたい製品を選択してください。"
+creation-welcome = """
+チケットを作成していただきありがとうございます。まもなくサポートチームメンバーが対応させていただきます。\
+お待ちいただく間、できるだけ多くの情報をご提供ください。\
+"""
