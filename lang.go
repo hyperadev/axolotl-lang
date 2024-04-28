@@ -41,6 +41,10 @@ func LoadLocales() error {
 	return nil
 }
 
+func Bundle() *i18n.Bundle {
+	return bundle
+}
+
 func GetLocalizer(locale discordgo.Locale) (*Localizer, bool) {
 	if l, ok := locales[locale]; ok {
 		return l, true

@@ -1,0 +1,50 @@
+# GitHub Actions workflow to lint the locale files.
+name: "Lint"
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  merge_group:
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.event.number || github.ref }}"
+  cancel-in-progress: "${{ github.event.action != 'merge_group' }}"
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: "Lint"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: "Setup Go stable"
+        uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5
+        with:
+          go-version: "stable"
+          cache: true
+          check-latest: true
+
+      - name: "Download dependencies"
+        run: go mod download
+
+      - name: "Verify dependencies"
+        run: go mod verify
+
+      - name: "Build"
+        run: go build -v ./...
+
+      - name: "Test"
+        run: go test -race -v ./...
+
+      - name: "Lint"
+        run: |
+          go build -trimpath ./cmd/lang-lint
+          ./lang-lint
