@@ -65,6 +65,10 @@ func LoadLocales() error {
 	return nil
 }
 
+func SupportedLocales() []discordgo.Locale {
+	return supportedLocales
+}
+
 func Bundle() *i18n.Bundle {
 	return bundle
 }
