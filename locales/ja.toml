@@ -5,6 +5,9 @@
 # This will almost definately contain mistakes, please fix any mistakes you find!
 #
 
+[locale]
+authors = "Joshua Sing"
+
 [generic]
 error = "おっと"
 error-description = """

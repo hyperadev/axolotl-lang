@@ -1,3 +1,6 @@
+[locale]
+authors = "Joshua Sing"
+
 [generic]
 error = "Oops!"
 error-description = """

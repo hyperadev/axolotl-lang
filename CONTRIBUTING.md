@@ -1,6 +1,6 @@
 # Welcome!
 
-Welcome to the Axolotl language files, first off, thank you for taking the time to consider contributing!
+Welcome to the Axolotl locale files, first off, thank you for taking the time to consider contributing!
 All contributions are extremely helpful and greatly appreciated!
 
 This document contains a set of guides for contributing to this project.
