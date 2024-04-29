@@ -1,6 +1,9 @@
 # Axolotl locale files
 
-The locale files used by Hypera Development's Axolotl Discord bot.
+[![Lint Status](https://github.com/HyperaDev/axolotl-lang/actions/workflows/lint.yml/badge.svg)](https://github.com/HyperaDev/axolotl-lang/actions/workflows/lint.yml)
+
+The locale files used by Hypera Development's Axolotl Discord bot.<br/>
+*Note: This Go module is not designed for use in other software, and its use is not supported.*
 
 ## What is Axolotl?
 
@@ -24,7 +27,7 @@ The current supported locales are:
 We welcome all contributions! If you have found a mistake or something that can be improved, please feel free to
 contribute! If you would like to contribute to this project, please see our [contributing guide](CONTRIBUTING.md).
 
-We are also looking to translate messages into more languages as well! If you know a language that Axolotl does not
+We are also looking to translate messages into more languages as well. If you know a language that Axolotl does not
 currently support, please contribute translations so that we can reach more people who know your language!
 
 ### License
@@ -36,7 +39,7 @@ The other code in this repository is licensed under the [MIT License](LICENSE-CO
 
 ## Contact
 
-You can contact us in our [official Discord server](https://discord.hypera.dev/) (fastest) or emailing us
+You can contact us in our [official Discord server](https://discord.hypera.dev/) (fastest) or by emailing us
 at [oss@hypera.dev](mailto:oss@hypera.dev).
 
 ## Acknowledgements
