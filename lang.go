@@ -73,46 +73,47 @@ func Bundle() *i18n.Bundle {
 	return bundle
 }
 
-func GetLocalizer(locale discordgo.Locale) (*Localizer, bool) {
+func GetLocalizer(locale discordgo.Locale) *Localizer {
 	if l, ok := locales[locale]; ok {
-		return l, true
+		return l
 	}
 
 	// Use default locale.
-	return locales[supportedLocales[0]], false
+	return locales[supportedLocales[0]]
 }
 
 func Localize(locale discordgo.Locale, id string) string {
-	l, _ := GetLocalizer(locale)
-	return l.Localize(id)
+	return GetLocalizer(locale).Localize(id)
 }
 
 func LocalizeWithData(locale discordgo.Locale, id string, data Data) string {
-	l, _ := GetLocalizer(locale)
-	return l.LocalizeWithData(id, data)
+	return GetLocalizer(locale).LocalizeWithData(id, data)
 }
 
 func LocalizePlural(locale discordgo.Locale, id string, count any) string {
-	l, _ := GetLocalizer(locale)
-	return l.LocalizePlural(id, count)
+	return GetLocalizer(locale).LocalizePlural(id, count)
 }
 
 func LocalizePluralWithData(locale discordgo.Locale, id string, count any, data Data) string {
-	l, _ := GetLocalizer(locale)
-	return l.LocalizePluralWithData(id, count, data)
+	return GetLocalizer(locale).LocalizePluralWithData(id, count, data)
 }
 
 type Localizer struct {
 	*i18n.Localizer
+	prefix string
 }
 
 func newLocalizer(locale discordgo.Locale) *Localizer {
 	return &Localizer{Localizer: i18n.NewLocalizer(bundle, string(locale))}
 }
 
+func (l *Localizer) Section(name string) *Localizer {
+	return &Localizer{Localizer: l.Localizer, prefix: name + "."}
+}
+
 func (l *Localizer) Localize(id string) string {
 	s, err := l.Localizer.Localize(&i18n.LocalizeConfig{
-		MessageID: id,
+		MessageID: l.prefix + id,
 	})
 	if s == "" && err != nil {
 		return id
@@ -122,7 +123,7 @@ func (l *Localizer) Localize(id string) string {
 
 func (l *Localizer) LocalizeWithData(id string, data Data) string {
 	s, err := l.Localizer.Localize(&i18n.LocalizeConfig{
-		MessageID:    id,
+		MessageID:    l.prefix + id,
 		TemplateData: data,
 	})
 	if s == "" && err != nil {
@@ -133,7 +134,7 @@ func (l *Localizer) LocalizeWithData(id string, data Data) string {
 
 func (l *Localizer) LocalizePlural(id string, count any) string {
 	s, err := l.Localizer.Localize(&i18n.LocalizeConfig{
-		MessageID:   id,
+		MessageID:   l.prefix + id,
 		PluralCount: count,
 	})
 	if s == "" && err != nil {
@@ -144,7 +145,7 @@ func (l *Localizer) LocalizePlural(id string, count any) string {
 
 func (l *Localizer) LocalizePluralWithData(id string, count any, data Data) string {
 	s, err := l.Localizer.Localize(&i18n.LocalizeConfig{
-		MessageID:    id,
+		MessageID:    l.prefix + id,
 		TemplateData: data,
 		PluralCount:  count,
 	})

@@ -23,3 +23,18 @@ creation-welcome = """
 チケットを作成していただきありがとうございます。まもなくサポートチームメンバーが対応させていただきます。\
 お待ちいただく間、できるだけ多くの情報をご提供ください。\
 """
+
+[command.info]
+title = "情報"
+version-title = "バージョン"
+version = """
+Axolotl v{{.axolotlVersion}} ({{.goVersion}})
+Locales v{{.axolotlLangVersion}}
+"""
+status-title = "現状"
+status = """
+アップタイム: `{{.uptime}}`
+最後のハートビート: `{{.lastHeartbeat}}`
+"""
+supported-locales-title = "対応言語"
+supported-locale-line = "{{.locale}}：{{.authors}}"

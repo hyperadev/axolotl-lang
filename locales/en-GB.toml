@@ -16,3 +16,18 @@ creation-welcome = """
 Thank you for creating a ticket. A support team member will be available to assist you shortly. \
 While you wait, please provide as much information as possible.\
 """
+
+[command.info]
+title = "Information"
+version-title = "Version"
+version = """
+Axolotl v{{.axolotlVersion}} ({{.goVersion}})
+Locales v{{.axolotlLangVersion}}
+"""
+status-title = "Status"
+status = """
+Uptime: `{{.uptime}}`
+Last heartbeat: `{{.lastHeartbeat}}`
+"""
+supported-locales-title = "Supported Locales"
+supported-locale-line = "{{.locale}} by {{.authors}}"
