@@ -1,5 +1,5 @@
 /*
- * This file is a part of hypera.dev/axolotl-lang/v2, licensed under the MIT License.
+ * This file is a part of hypera.dev/axolotl/lang/v2, licensed under the MIT License.
  *
  * Copyright (c) 2024 Joshua Sing <joshua@joshuasing.dev>
  *
@@ -22,7 +22,12 @@
  * SOFTWARE.
  */
 
-package lang
+// Package lang provides the locale files used by Hypera Development's Axolotl
+// Discord bot.
+//
+// Note: This module is not designed for use in other software, and use outside
+// of Axolotl is not supported.
+package lang // import "hypera.dev/axolotl/lang/v2"
 
 import (
 	"embed"

@@ -1,5 +1,5 @@
 /*
- * This file is a part of hypera.dev/lib, licensed under the MIT License.
+ * This file is a part of hypera.dev/axolotl/lang/v2, licensed under the MIT License.
  *
  * Copyright (c) 2024 Joshua Sing <joshua@joshuasing.dev>
  *
@@ -28,7 +28,7 @@ import (
 	"fmt"
 	"os"
 
-	"hypera.dev/axolotl-lang/v2"
+	"hypera.dev/axolotl/lang/v2"
 )
 
 func main() {
