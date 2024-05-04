@@ -1,4 +1,4 @@
-module hypera.dev/axolotl/lang/v2
+module hypera.dev/axolotl-lang/v2
 
 go 1.22.2
 

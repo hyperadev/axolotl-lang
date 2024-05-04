@@ -11,7 +11,7 @@ Axolotl is the Discord bot used by Hypera Development to run our Discord servers
 In order to make Axolotl super helpful, we have decided to support multiple locales so that users can easily understand
 and interact with Axolotl.
 
-This module (`hypera.dev/axolotl/lang/v2`) contains the translatable locale files used by Axolotl to display messages
+This module (`hypera.dev/axolotl-lang/v2`) contains the translatable locale files used by Axolotl to display messages
 in Discord.
 
 ### Supported languages
