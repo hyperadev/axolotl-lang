@@ -23,6 +23,14 @@ creation-welcome = """
 チケットを作成していただきありがとうございます。まもなくサポートチームメンバーが対応させていただきます。\
 お待ちいただく間、できるだけ多くの情報をご提供ください。\
 """
+creation-disclaimer = """
+スタッフは主に英語を話します。日本語での対応を心がけておりますが、翻訳ツールを使用する場合があります。\
+そのような翻訳ツールは間違いを犯す可能性があり、メッセージを正確に翻訳できない場合があります。お詫び申し上げます。
+
+英語を理解し、このチケットで英語を使用したい場合は、お知らせください。
+"""
+member-leave-title = "Ticket {{if .creator}}creator{{else}}member{{end}} left the server"
+member-leave = "{{.member}} has left the server and has been removed from the ticket."
 
 [command.info]
 title = "情報"
