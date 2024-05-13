@@ -4,21 +4,31 @@ authors = "Joshua Sing"
 [generic]
 error = "Oops!"
 error-description = """
-An error occurred. Please try again later.
+Sorry, an error occurred. Please try again later.
 If the issue persists, please report this to a staff member.
 """
+error-interaction-user = "This interaction was created by another user."
 
 [ticket]
 creation-title = "Ticket creation"
 channel-created = "Please follow the steps in {{.channel}} to continue."
 product-select = "Please select the product you wish to receive support for."
 creation-welcome = """
-Thank you for creating a ticket. A support team member will be available to assist you shortly. \
-While you wait, please provide as much information as possible.\
+Thank you for creating a ticket. A member of our support team will be available shortly. \
+While you wait, we would appreciate it if you could provide us with as much detailed information as possible.
 """
-creation-disclaimer = ""
-member-leave-title = "Ticket {{if .creator}}creator{{else}}member{{end}} left the server"
-member-leave = "{{.member}} has left the server and has been removed from the ticket."
+
+[ticket.event.member]
+leave-title = "Ticket {{if .creator}}creator{{else}}member{{end}} left the server"
+leave-description = "{{.member}} has left the server and has been removed from the ticket."
+
+[ticket.close]
+title = "Close ticket"
+confirm = """
+Are you sure you wish to close this ticket?
+This ticket cannot be reopened once closed.
+"""
+error-not-ticket = "This command can only be used in a ticket."
 
 [command.info]
 title = "Information"
