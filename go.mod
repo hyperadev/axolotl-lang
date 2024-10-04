@@ -6,7 +6,7 @@ require (
 	github.com/BurntSushi/toml v1.3.2
 	github.com/bwmarrin/discordgo v0.28.1
 	github.com/nicksnyder/go-i18n/v2 v2.4.0
-	golang.org/x/text v0.15.0
+	golang.org/x/text v0.19.0
 )
 
 require (
